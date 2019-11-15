@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.a85b43bb78b43e45318a8e5c7e5797b5.js"
+  "/precache-manifest.66fc067032c38f878c31fee66acd9ed2.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "sportify"});
