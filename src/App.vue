@@ -1,22 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view />
+
+    <div class="mt-5">
+      <p class="text-secondary text-center">Built by <a href="https://twitter.com/i_santiag0" class="fancy-link">Temitope Ilesanmi</a></p>
+
+      <p class="text-center small">
+        Credits: <a href="https://www.football-data.org" class="fancy-link">Football data API</a>
+      </p>
+    </div>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+export default {
 }
+</script>
 
+<style lang="scss">
+@import "./assets/styles.scss";
 #nav {
   padding: 30px;
 

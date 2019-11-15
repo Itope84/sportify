@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Poppins&display=swap');
+@import "~bootstrap-scss";
+
+// Variables
+$primary: #347ab8;
+$secondary: #dd7c00;
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .header{
+  font-family: "Montserrat", sans-serif;
+}
+body, p, span, div {
+    font-family: "Poppins", sans-serif;
+}
+
+#app {
+    margin-bottom: 40px;
+}
+
+.header-section {
+  background-image: url("./assets/bg-football.jpg");
+  position: relative;
+  min-height: 300px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+  }
+
+  * {
+    color: #fff;
+    z-index: 5;
+  }
+}
+.container {
+  max-width: 700px;
+}
+
+.logo {
+  max-width: 200px;
+}
+
+.page-body {
+  margin-top: -50px;
+  padding: 20px;
+  z-index: 50;
+}
+
+.competition {
+  height: 100%;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.175) !important;
+  align-items: center;
+  border-radius: 10px;
+  display: flex;
+  color: lighten($color: #000000, $amount: 30);
+  &:hover {
+    box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.175) !important;
+    color: lighten($color: #000000, $amount: 15);
+    cursor: pointer;
+  }
+
+  &--emblem {
+    width: 30%;
+    flex: 1;
+    max-width: 80px;
+    margin-right: 10px;
+
+    img {
+      max-height: 100px;
+    }
+  }
+
+  &--details {
+    flex: 1;
+  }
+}
+
+.fancy-link {
+  text-decoration: none;
+  color: #292a2a;
+  transition: box-shadow 0.15s;
+  box-shadow: inset 0 -2px 0 0 $primary;
+  cursor: pointer;
+  padding: 5px;
+
+  &:hover {
+    box-shadow: inset 0 -2rem 0 0 $primary;
+    color: #fff !important;
+    text-decoration: none;
+  }
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+// Competition page specific
+.tabs {
+    background-color: $secondary;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.tab {
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 500;
+
+  &.active,
+  &:hover {
+    border-bottom: 3px solid #fff;
+  }
+}
+
+
+// Standings
+.standings {
+    &--group {
+        box-shadow: 0 0.5rem 1.0rem rgba(0, 0, 0, 0.275) !important;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin-bottom: 2rem;
+
+        .group-name {
+            padding-left: 20px;
+            padding-top: 20px;
+            color: #292a2a;
+        }
+
+        .standings-table {
+            padding: 2rem 1rem;
+            width: fit-content;
+        }
+
+        .standing-row {
+            display: flex;
+            align-items: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-bottom: 0.5px solid #dedede;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+            }
+            
+            &.standing-header {
+                font-weight: 600;
+                cursor: inherit;
+                
+                &:hover {
+                    box-shadow: none;
+                }
+                .team-name {
+                    font-weight: 600;
+                }
+            }
+
+            div {
+                flex: 1;
+                margin: 5px;
+                min-width: 30px;
+                text-align: center;
+            }
+            .team-name {
+                .emblem {
+                    min-width: 30px;
+                    width: 30px;
+                    max-width: 30px;
+                    margin-right: 10px;
+                }
+                display: flex;
+                align-items: center;
+                font-weight: 500;
+                flex: 2;
+                min-width: 200px;
+                text-align: left;
+            }
+        }
+    }
+}
+
+
+// matches
+.match {
+    &:nth-child(odd) {
+        border-right: 0.5px solid #dedede;
+    }
+    &:hover {
+        box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.175) !important;
+    }
+    cursor: pointer;
+    border-bottom: 0.5px solid #dedede;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+
+    .home-row, .away-row {
+        display: flex;
+        align-items: center;
+        .emblem {
+            max-width: 25px;
+            margin-right: 10px;
+        }
+
+        .outcome {
+            margin-left: auto;
+            strong {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .match-details {
+        flex: 2;
+    }
+
+    .status {
+        margin-left: 20px;
+    }
+
+    .home-row {
+        margin-bottom: 20px;
+    }
+}
+
+// Transitions
+.fade-right-enter-active{
+  transition: all 0.3s ease;
+}
+.fade-right-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.fade-right-enter, .fade-right-leave-to
+/* .fade-right-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
